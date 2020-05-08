@@ -45,6 +45,7 @@ get_rotate() {
 	esac
 }
 
+echo "#!/usr/bin/env bash"
 echo 'CONNECTED="$(xrandr |grep -Po "^.*(?= connected)")"'
 
 for C in $DISP_CONFS; do
