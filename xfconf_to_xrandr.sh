@@ -64,7 +64,7 @@ for C in $DISP_CONFS; do
 		fi
 	done
 	echo "$THE_IF ; then"
-	echo "echo \"Activating $(get_name $C)\""
+	echo "echo \"Activating profile: $(get_name $C)\""
 	echo "$CMD"
 	echo "exit 0"
 	echo "fi"
