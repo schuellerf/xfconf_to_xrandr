@@ -9,9 +9,9 @@ chmod a+x lightdm-display-setup-script.sh
 ```
 
 you can also just test by calling the generated script then:
-´´´
+```
 ./lightdm-display-setup-script.sh
-´´´
+```
 
 Then you can use this script as LightDM "display-setup-script"
 see https://github.com/Canonical/lightdm/blob/master/data/lightdm.conf
