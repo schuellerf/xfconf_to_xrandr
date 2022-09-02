@@ -46,7 +46,7 @@ get_rotate() {
 }
 
 echo "#!/usr/bin/env bash"
-echo 'CONNECTED="$(xrandr |grep -Po "^.*(?= connected)")"'
+echo 'CONNECTED="$(xrandr |grep -Po "^.*(?= connected)"|sed "s/$/xx/g")"'
 
 for C in $DISP_CONFS; do
 	CMD="xrandr"
@@ -55,7 +55,7 @@ for C in $DISP_CONFS; do
 	DISP_CONN="$(get_connected $C)"
 	THE_IF="if true"
 	for D in $DISP_CONN; do
-		THE_IF="$THE_IF && [[ \$CONNECTED == *${D}* ]]"
+		THE_IF="$THE_IF && [[ \$CONNECTED == *${D}xx* ]]"
 		if is_active $C $D; then
 			CMD="$CMD --output $D --mode $(get_resolution $C $D) --pos $(get_pos $C $D) --rotate $(get_rotate $C $D)"
 			echo "# - $D: Yes"
