@@ -33,3 +33,7 @@ and test with
 ```
 /etc/lightdm/lightdm.conf.d/xrandr.sh
 ```
+
+# Known issues
+
+This script only checks if something is connected on the respective cards but not which monitor exactly (EDID) so this might lead to wrong settings if you have many profiles
